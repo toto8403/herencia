@@ -1,0 +1,44 @@
+class Figura:
+    def __init__(self,nombre,color):
+        self.nombre = nombre
+        self.color = color
+    def imprimir_detalles(self):
+        print(f"Nombre:{self.nombre}")
+        print(f"Color:{self.color}")
+class Circulo(Figura):
+    def __init__(self,radio,color):
+        super().__init__("circulo",color)
+        self.radio = radio
+    def obtener_area(self):
+        A=3.14*(self.radio  ** 2)
+        return A
+    def obtener_perimetro(self):
+        P=2*self.radio*3.14
+        return P
+    def imprimir_detalles(self):
+        super().imprimir_detalles()
+        print(f"Radio:{self.radio}")
+        print(f"Area:{self.obtener_area():.2f}")
+        print(f"Perimetro:{self.obtener_perimetro():.2f}")
+class Rectángulo(Figura):
+    def __init__(self,base,altura,color):
+        super().__init__("rectangulo",color)
+        self.base=base
+        self.altura=altura
+    def obtener_area(self):
+        A=self.base*self.altura
+        return A
+    def obtener_perimetro(self):
+        P=(2*self.base)+(2*self.altura)
+        return P
+    def imprimir_detalles(self):
+        super().imprimir_detalles()
+        print(f"Base:{self.base}")
+        print(f"Altura:{self.altura}")
+        print(f"Area:{self.obtener_area():.2f}")
+        print(f"Perimetro:{self.obtener_perimetro():.2f}")
+if __name__=="__main__":
+    potato=Circulo(5,"celeste")
+    potato.imprimir_detalles()
+    rotato=Rectángulo(15,10,"azul")
+    rotato.imprimir_detalles()
