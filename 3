@@ -1,0 +1,32 @@
+class animal:
+    def __init__(self,tipo):
+        self.tipo=tipo
+    def mostrar_detalles(self):
+        print(f"Tipo:{self.tipo}")
+class perro(animal):
+    def __init__(self,tipo,sonido):
+        super().__init__("perro salchicha")
+        self.sonido=sonido
+    def obtener_sonido(self):
+        self.sonido=="guau"
+        return sonido
+    def mostrar_detalles(self):
+        print(f"Tipo:{self.tipo}")
+        print(f"Sonido:{self.sonido}")
+class gato(animal):
+    def __init__(self,tipo,sonido):
+        super().__init__("siames")
+        self.sonido=sonido
+    def obtener_sonido(self):
+        self.sonido=="miau"
+        return sonido
+    def mostrar_detalles(self):
+        print(f"Tipo:{self.tipo}")
+        print(f"Sonido:{self.sonido}")
+if __name__=="__main__":
+    sonido= "guau"
+    potato=perro("perro salchicha",sonido)
+    potato.mostrar_detalles()
+    sonidos= "miau"
+    potato=gato("siames",sonidos)
+    potato.mostrar_detalles()
