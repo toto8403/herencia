@@ -1,0 +1,42 @@
+class vehiculo:
+    def __init__(self,marca, modelo, año, combustible):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+        self.combustible=combustible
+    def mostrar_detalles(self):
+        print()
+        print(f"Marca:{self.marca}")
+        print(f"Modelo:{self.modelo}")
+        print(f"Año:{self.año}")
+class automovil(vehiculo):
+    def __init__(self,marca,modelo,año,combustible):
+        super().__init__(marca,modelo,año,combustible)
+    def mostrar_detalles(self):
+        print(f"vehiculo")
+        print(f"Marca:{self.marca}")
+        print(f"Modelo:{self.modelo}")
+        print(f"Año:{self.año}")
+    def conseguir_consumo(self):
+        a=int(input("ingrese la cantidad de kilometros que se requiere para el viaje en automovil: "))
+        consumo=a/self.combustible
+        return consumo
+class motocicleta(vehiculo):
+    def __init__(self,marca,modelo,año,combustible):
+        super().__init__(marca,modelo,año,combustible)
+    def mostrar_detalles(self):
+        print(f"motocicleta")
+        print(f"Marca:{self.marca}")
+        print(f"Modelo:{self.modelo}")
+        print(f"Año:{self.año}")
+    def conseguir_consumo(self):
+        b=int(input("ingrese la cantidad de kilometros que se requiere para el viaje en una motocicleta: "))
+        consumo=b/self.combustible
+        return consumo
+if __name__=="__main__":
+    potato=automovil("scudela","12cilindri",2024, 92)
+    print(f"consumo: {potato.conseguir_consumo()}")
+    potato.mostrar_detalles()
+    potato=motocicleta("triumph","speed t4", 2024, 12)
+    print(f"consumo: {potato.conseguir_consumo()}")
+    potato.mostrar_detalles()
