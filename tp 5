@@ -1,0 +1,43 @@
+from datetime import datetime
+c=datetime(2025,7, 12)
+x=datetime.now()
+class producto:
+    def __init__(self,nombre,precio,fecha_vencimiento):
+        self.nombre=nombre
+        self.precio=precio
+        self.fecha_vencimiento=fecha_vencimiento
+class productoalimenticio(producto):
+    def __init__(self,nombre,precio,fecha_vencimiento):
+        super().__init__("papá",1250,"2025/7/12")
+    def metodo(self):
+        p=(c-x).days
+        print(p)
+        if p==1:
+            print("el descuento es de un %50")
+        if p==2:
+            print("el descuento es de un %25")
+        if p<=0:
+            print("no mames señor, esto ya tiene un ecosistema")
+class productoelectronico(producto):
+    def __init__(self,nombre,precio,defectos,fecha_vencimiento):
+        super().__init__("iphon 250120",999999999999,"2025/7/11")
+        self.defectos=defectos
+    def metodo(self):
+        p=self.defectos
+        if p==5:
+            print("el descuento sera del %50")
+        if p==4:
+            print("el descuento sera del %40")
+        if p==3:
+            print("el descuento sera del %30")
+        if p==2:
+            print("el descuento sera del %20")
+        if p==1:
+            print("el descuento sera del %10")
+        if p>=10:
+            print("señor, ¿porque hagaro el con todos los defectos posibles?, ¿acaso es pobre y lo quiere gratis?")
+if __name__=="__main__":
+    potato=productoalimenticio("papá",1250,c)
+    potato.metodo()
+    potato=productoelectronico("iphone 250120",999999999999,4,c)
+    potato.metodo()
