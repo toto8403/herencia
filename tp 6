@@ -1,0 +1,40 @@
+class persona:
+    def __init__(self,nombre,apellido,edad):
+        self.nombre=nombre
+        self.apellido=apellido
+        self.edad=edad
+class estudiante(persona):
+    def __init__(self,nombre,apellido,edad,rol):
+        super().__init__("juancarlos","limaymanta",15)
+        self.rol=rol
+    def metodo_rol(self):
+        if self.edad >= 25:
+            self.rol == "maestro"
+        else:
+            self.rol =="aprendiz"
+        return self.rol
+    def mostrar_detalles(self):
+        print(f"Nombre:{self.nombre}")
+        print(f"Apellido:{self.apellido}")
+        print(f"Edad:{self.edad}")
+        print(f"Rol:{self.rol}")
+class profesor(persona):
+    def __init__(self,nombre,apellido,edad,rol):
+        super().__init__("arandano","guzman",27)
+        self.rol=rol
+    def metodo_rol(self):
+        if self.edad >= 25:
+            self.rol == "maestro"
+        else:
+            self.rol =="aprendiz"
+        return self.rol
+    def mostrar_detalles(self):
+        print(f"Nombre:{self.nombre}")
+        print(f"Apellido:{self.apellido}")
+        print(f"Edad:{self.edad}")
+        print(f"Rol:{self.rol}")
+if __name__=="__main__":
+    potato=estudiante("juancarlos","limaymanta",15,"aprendiz")
+    potato.mostrar_detalles()
+    potato=profesor("arandano","guzman",27,"maestro")
+    potato.mostrar_detalles()
